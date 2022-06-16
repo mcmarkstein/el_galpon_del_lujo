@@ -1,46 +1,30 @@
 class Carteras:
-    def __init__(self, id, fecha_ingreso, marca_cartera, color):
+    def __init__(self, id, fecha_ingreso, marca, color):
         self.id = id
         self.fecha_ingreso = fecha_ingreso
-        self.marca_cartera = marca_cartera
+        self.marca = marca
         self.color = color
 
 
-class Mochila(carteras):
-    def __init__(self, id, fecha_ingreso, modelo_cartera, marca_cartera, color):
-        super().__init__(id, fecha_ingreso, modelo_cartera, marca_cartera, color)
-        self.id = id
-        self.fecha_ingreso = fecha_ingreso
-        self.modelo_cartera = modelo_cartera
-        self.marca_cartera = marca_cartera
-        self.color = color
+class Mochila(Carteras):
+    def __init__(self, id, fecha_ingreso, marca, color):
+        super().__init__(id, fecha_ingreso,  marca, color)
+        self.modelo = "Mochila"
 
 
-class CrossBody(carteras):
-    def __init__(self, id, fecha_ingreso, modelo_cartera, marca_cartera, color):
-        super().__init__(id, fecha_ingreso, modelo_cartera, marca_cartera, color)
-        self.id = id
-        self.fecha_ingreso = fecha_ingreso
-        self.modelo_cartera = modelo_cartera
-        self.marca_cartera = marca_cartera
-        self.color = color
+class CrossBody(Carteras):
+    def __init__(self, id, fecha_ingreso, modelo, marca, color):
+        super().__init__(id, fecha_ingreso, modelo, marca, color)
+        self.modelo = "Cross body"
 
 
-class Clutch(carteras):
-    def __init__(self, id, fecha_ingreso, modelo_cartera, marca_cartera, color):
-        super().__init__(id, fecha_ingreso, modelo_cartera, marca_cartera, color)
-        self.id = id
-        self.fecha_ingreso = fecha_ingreso
-        self.modelo_cartera = modelo_cartera
-        self.marca_cartera = marca_cartera
-        self.color = color
+class Clutch(Carteras):
+    def __init__(self, id, fecha_ingreso, modelo, marca, color):
+        super().__init__(id, fecha_ingreso, modelo, marca, color)
+        self.modelo = "Clutch"
 
 
-class Totebag(carteras):
-    def __init__(self, id, fecha_ingreso, modelo_cartera, marca_cartera, color):
-        super().__init__(id, fecha_ingreso, modelo_cartera, marca_cartera, color)
-        self.id = id
-        self.fecha_ingreso = fecha_ingreso
-        self.modelo_cartera = modelo_cartera
-        self.marca_cartera = marca_cartera
-        self.color = color
+class Totebag(Carteras):
+    def __init__(self, id, fecha_ingreso, modelo, marca, color):
+        super().__init__(id, fecha_ingreso, modelo, marca, color)
+        self.modelo = "Totebag"
