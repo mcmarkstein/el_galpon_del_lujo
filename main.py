@@ -5,12 +5,11 @@ from flask import jsonify
 from flask import make_response
 
 from clientes import Cliente, generador_id_cliente
-from carteras import Cartera, Totebag, CrossBody, Clutch, Mochila
+from carteras import Carteras, Totebag, CrossBody, Clutch, Mochila
 
 app = Flask(__name__)
 
-
-@app.route("/api/el_galpo_de_lujo/generar_usuario/, methods = ['POST']")
+@app.route("/api/el_galpon_de_lujo/generar_usuario/, methods = ['POST']")
 def crear_cliente():
     cliente = request.json
 
@@ -25,7 +24,7 @@ def crear_cliente():
             cliente['Estado']
         )
 
-    cliente.append(new_client)
+    cliente.append(nuevo_cliente)
 
     except KeyError as key_err:
     missing_param = (key_err.__str__())

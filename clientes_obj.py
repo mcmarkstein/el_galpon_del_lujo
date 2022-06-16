@@ -19,34 +19,9 @@ class Cliente:
         return {
             'id_cliente': self.id_cliente,
             'nombre': self.nombre,
-            'apellido': self.last_name,
-            'DNI': self.DNI
-            'telefono': self.telefono
-            self.email
-            self.estado
-
-            'address': self.address.serialize()
+            'apellido': self.apellido,
+            'DNI': self.DNI,
+            'telefono': self.telefono,
+            'email': self.email,
+            'estado': self.estado
         }
-
-
-class ClientAddress:
-
-    def __init__(self, street, street_number, city, state, post_code, country) -> None:
-        self.street = street
-
-    self.street_number = street_number
-    self.city = city
-    self.state = state
-    self.post_code = post_code
-    self.country = country
-
-    def serialize(self):
-        return {
-            'street': self.state,
-            'street_number': self.street_number,
-            'city': self.city,
-            'state': self.state,
-            'post_code': self.post_code,
-            'country': self.country
-        }
-
