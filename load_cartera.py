@@ -4,7 +4,7 @@ from carteras_obj import Carteras, Mochila, Totebag, Clutch, CrossBody      #Pre
 def cargar_carteras():
     carteras = []
 
-    with open('/bd_carteras', 'r') as file:
+    with open('/bd_carteras.py', 'r') as file:
         bd_carteras = json.load(file)
         for cartera in bd_carteras:
             carteras.append(

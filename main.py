@@ -11,9 +11,10 @@ from load_cartera import cargar_carteras
 
 app = Flask(__name__)
 clientes: list = cargar_clientes()      #formas de aclarar que tipo de datos es
-#vamos a hacer algo igual para carteras
+carteras: list = cargar_carteras()      #vamos a hacer algo igual para carteras
 
-@app.route("/api/el_galpon_de_lujo/generar_usuario/, methods = ['POST']")
+
+@app.route("/api/el_galpon_de_lujo/generar_usuario/", methods = ['POST'])
 def crear_cliente():
     cliente = request.json
 
@@ -41,12 +42,20 @@ def crear_cliente():
 
     return jsonify(nuevo_cliente.serialize())
 
-@app.route("/api/el_galpon_de_lujo/ver_carrito/<id_cliente>, methods = ['GET']")
+@app.route("/api/el_galpon_de_lujo/ver_carrito/<id_cliente>", methods = ['GET'])
 def ver_carrito(id_cliente):
     for cliente in clientes:
         if cliente.id_cliente == id_cliente:
             for producto in cliente.carrito:
                     return jsonify(producto.serialize())
+
+@app.route("/api/el_galpon_de_lujo/ver_catalogo", methods = ['GET'])
+def ver_catalogo():
+    for cartera in carteras:
+        return jsonify(cartera.serialize())
+
+
+
 
 
 
