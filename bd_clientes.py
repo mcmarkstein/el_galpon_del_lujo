@@ -1,4 +1,5 @@
-{
+[
+    {
     "id_cliente": "12345",
     "nombre": "Mario",
     "apellido": "Arjona",
@@ -7,8 +8,8 @@
     "email": "marjona@gmail.com",
     "estado": "ACTIVO",
     "carrito": []
-},
-{
+    },
+    {
     "id_cliente": "98765",
     "nombre": "Alejandra",
     "apellido": "Sanchez",
@@ -17,8 +18,8 @@
     "email": "asanchez@gmail.com",
     "estado": "ACTIVO",
     "carrito": []
-},
-{
+    },
+    {
     "id_cliente": "12345",
     "nombre": "Manuel",
     "apellido": "Belgrano",
@@ -27,8 +28,8 @@
     "email": "mbelgrano@gmail.com",
     "estado": "INACTIVO",
     "carrito": []
-},
-{
+    },
+    {
     "id_cliente": "00751",
     "nombre": "Julieta",
     "apellido": "Mandalorian",
@@ -37,8 +38,8 @@
     "email": "mandalirian1@gmail.com",
     "estado": "ACTIVO",
     "carrito": []
-},
-{
+    },
+    {
     "id_cliente": "00843",
     "nombre": "Soledad",
     "apellido": "Gorgelin",
@@ -47,4 +48,5 @@
     "email": "gorge_sole@gmail.com",
     "estado": "INACTIVO",
     "carrito": []
-}
+    }
+]

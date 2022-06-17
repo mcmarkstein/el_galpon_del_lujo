@@ -6,7 +6,8 @@ from flask import make_response
 
 from clientes_obj import Cliente, generador_id_cliente
 from load_cliente import cargar_clientes
-from bd_carteras import Carteras, Totebag, CrossBody, Clutch, Mochila
+from carteras_obj import Carteras, Totebag, CrossBody, Clutch, Mochila
+from load_cartera import cargar_carteras
 
 app = Flask(__name__)
 clientes: list = cargar_clientes()      #formas de aclarar que tipo de datos es
