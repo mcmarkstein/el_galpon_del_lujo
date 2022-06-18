@@ -87,11 +87,6 @@ def eliminar_de_carrito(id_cliente, id):
                     cliente.carrito.remove(producto)
                 return jsonify({'Busqueda': id, 'Estado': 'Se ha eliminado el producto'})
 
-
-#@app.route("/api/el_galpon_de_lujo/carteras/actualizar_precios", methods=['PUT'])      #Actualizar precios, ver como se hace para solo admin
-
-
-
 @app.route("/api/el_galpon_de_lujo/terminar_compra/<id_cliente>", methods=['GET'])         #terminar compra
 def temrinar_compra(id_cliente):
     precios = []
