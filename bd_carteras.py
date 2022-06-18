@@ -14,8 +14,8 @@
         "modelo": "Totebag",
         "marca": "Louis Vuitton",
         "color": "marrón",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "USD",
+        "precio": 4000
     },
     {
         "id": "0003",
@@ -23,8 +23,8 @@
         "modelo": "Clutch",
         "marca": "Chanel",
         "color": "negra",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "EUR",
+        "precio": 3500
     },
     {
         "id": "0004",
@@ -32,8 +32,8 @@
         "modelo": "Cross Body",
         "marca": "Prada",
         "color": "negra",
-         "tipo_de_cambio": "",
-         "precio":
+         "tipo_de_cambio": "USD",
+         "precio": 1500
     },
     {
         "id": "0005",
@@ -41,8 +41,8 @@
         "modelo": "Mochila",
         "marca": "Fendi",
         "color": "azul",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "EUR",
+        "precio": 2300
     },
     {
         "id": "0006",
@@ -50,8 +50,8 @@
         "modelo": "Totebag",
         "marca": "Hermés",
         "color": "marrón",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "USD",
+        "precio": 100000
     },
     {
         "id": "0007",
@@ -59,8 +59,8 @@
         "modelo": "Clutch",
         "marca": "Louis Vuitton",
         "color": "naranja",
-        "tipo_de_cambioa": "",
-        "precio":
+        "tipo_de_cambio": "USD",
+        "precio": 2000
     },
     {
         "id": "0008",
@@ -68,8 +68,8 @@
         "modelo": "Mochila",
         "marca": "Gucci",
         "color": "verde",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "EUR",
+        "precio": 4600
     },
     {
         "id": "0009",
@@ -77,8 +77,8 @@
         "modelo": "Cross Body",
         "marca": "Prada",
         "color": "rosa",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "USD",
+        "precio": 2100
     },
     {
         "id": "0010",
@@ -86,16 +86,16 @@
         "modelo": "Totebag",
         "marca": "Chanel",
         "color": "rosa",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "USD",
+        "precio": 5800
     {
         "id": "0011",
         "fecha_ingreso": "1/10/2021",
         "modelo": "Cross Body",
         "marca": "Louis Vuitton",
         "color": "amarillo",
-        "tipo_de_cambiolo": "",
-        "precio":
+        "tipo_de_cambiolo": "USD",
+        "precio": 3600
     },
     {
         "id": "0012",
@@ -103,8 +103,8 @@
         "modelo": "Clutch",
         "marca": "Hermés",
         "color": "beige",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "EUR",
+        "precio": 3000
     },
     {
         "id": "0013",
@@ -112,8 +112,8 @@
         "modelo": "Mochila",
         "marca": "Prada",
         "color": "gris",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "USD",
+        "precio": 1100
     },
     {
         "id": "0014",
@@ -121,8 +121,8 @@
         "modelo": "Cross Body",
         "marca": "Prada",
         "color": "plateado",
-        "tipo_de_cambioda": "",
-        "precio":
+        "tipo_de_cambioda": "EUR",
+        "precio": 1600
     },
     {
         "id": "0015",
@@ -130,8 +130,8 @@
         "modelo": "Clutch",
         "marca": "Chanel",
         "color": "marrón",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "USD",
+        "precio": 3200
     },
     {
         "id": "0016",
@@ -139,8 +139,8 @@
         "modelo": "Totebag",
         "marca": "Hermés",
         "color": "negro",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "USD",
+        "precio": 9000
     },
     {
         "id": "0017",
@@ -148,8 +148,8 @@
         "modelo": "Clutch",
         "marca": "Hermés",
         "color": "beige",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "EUR",
+        "precio": 5000
     },
     {
         "id": "0018",
@@ -157,8 +157,8 @@
         "modelo": "Cross body",
         "marca": "Gucci",
         "color": "beige",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "EUR",
+        "precio": 3400
     },
     {
         "id": "0019",
@@ -166,8 +166,8 @@
         "modelo": "Mochila",
         "marca": "Chanel",
         "color": "blanco",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "EUR",
+        "precio": 2890
     },
     {
         "id": "0020",
@@ -175,7 +175,7 @@
         "modelo": "Totebag",
         "marca": "Fendi",
         "color": "amarillo",
-        "tipo_de_cambio": "",
-        "precio":
+        "tipo_de_cambio": "USD",
+        "precio": 4500
     }
 ]
