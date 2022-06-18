@@ -55,16 +55,27 @@ def ver_catalogo():
     return jsonify([cartera.serialize() for cartera in carteras])
 
 @app.route("/api/el_galpon_de_lujo/carteras/<id>", methods=['GET'])     #ver una cartera por id
-def ver_cartera(id):
+def ver_cartera_por_id(id):
     for cartera in carteras:
         if cartera.id == id:
             return jsonify(cartera.serialize())
 
+"""
+@app.route("/api/el_galpon_de_lujo/carteras/<marca>", methods=['GET'])      #ver carteras por marca  ARREGLAR
+def ver_cartera_por_marca(marca):
+    for cartera in carteras:
+        if cartera.marca == marca:
+            return jsonify(cartera.serialize())
+"""
 
-#@app.route("/api/el_galpon_de_lujo/carteras/<marca>", methods=['GET'])      #ver carteras por marca
 
-
-#@app.route("/api/el_galpon_de_lujo/carrito/<id>", methods=['PUT'])       #Agregar a carrito por id
+@app.route("/api/el_galpon_de_lujo/carrito/<id_cliente>/agregar/<id>", methods=['PUT'])       #Agregar a carrito por id
+def agregar_a_carrito(id_cliente, id):
+    for cartera in carteras:
+        for cliente in clientes:
+            if cartera.id == id and cliente.id_cliente == id_cliente:
+                cliente.carrito.append(cartera)
+                return jsonify([producto.serialize() for producto in cliente.carrito])
 
 
 @app.route("/api/el_galpon_de_lujo/carrito/<id_cliente>/eliminar/<id>", methods=['DELETE'])      #Eliminar producto de carrito por id
@@ -74,9 +85,10 @@ def eliminar_de_carrito(id_cliente, id):
             for producto in cliente.carrito:
                 if producto.id == id:
                     cliente.carrito.remove(producto)
-                    return jsonify({'Busqueda': id, 'Estado': 'Se ha eliminado el producto'})
-                else:
-                    return jsonify({'Busqueda': id, 'Estado': 'no se ha encontrado el ID indicado en el carrito'})
+                return jsonify({'Busqueda': id, 'Estado': 'Se ha eliminado el producto'})
+
+#return jsonify({'Busqueda': id, 'Estado': 'Se ha eliminado el producto'})
+#return jsonify({'Busqueda': id, 'Estado': 'no se ha encontrado el ID indicado en el carrito'})
 
 
 
