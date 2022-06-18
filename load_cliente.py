@@ -4,7 +4,7 @@ from clientes_obj import Cliente
 def cargar_clientes():
     clientes = []
 
-    with open('/bd_clientes.json', 'r') as file:
+    with open('./bd_clientes.json', 'r') as file:
         bd_clientes = json.load(file)
         for cliente in bd_clientes:
             clientes.append(
