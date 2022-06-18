@@ -1,6 +1,4 @@
-import csv
 import sqlite3
-
 
 clientes = [
     {
@@ -55,44 +53,20 @@ clientes = [
     }
 ]
 
-with open ("./consulta_2.csv", "w", newline="\n") as archivo:
-        campos = ['id_cliente', 'email', 'estado']
-        writer = csv.DictWriter(archivo, fieldnames=campos)
-        writer.writeheader()
-        for client in clientes:
-             writer.writerow({ "id_cliente": client["id_cliente"],
-                "email" : client["email"],
-                "estado" : client["estado"]
-
-            })
-archivo.close()
-del (archivo)
-
-
-
 conexion = sqlite3.connect('./clientesBBDD.db')
 
 cursor = conexion.cursor()
 
 sentenciaSQL = 'CREATE TABLE clientes'
 sentenciaSQL += '(id_cliente integer,'
-sentenciaSQL += 'nombre VARCHAR(30), '
-sentenciaSQL += 'apellido VARCHAR(30), '
-sentenciaSQL += 'dni integer, '
-sentenciaSQL += 'telefono integer, '
 sentenciaSQL += 'email VARCHAR(40), '
 sentenciaSQL += 'estado VARCHAR(30)) '
 
-sentenciaSQL = "INSERT INTO clientes"
-sentenciaSQL +=
-sentenciaSQL +=
-sentenciaSQL +=
-sentenciaSQL +=
-sentenciaSQL +=
-sentenciaSQL +=
-sentenciaSQL +=
+conexion.commit()
 
-cursor.execute(sentenciaSQL)
+
+sentenciaSQL = "INSERT INTO clientes VALUES (?,?,?,?,?,?,?)"
+cursor.executemany(sentenciaSQL, "./consulta_2.csv")
+
+conexion.commit()
 conexion.close()
-
-
