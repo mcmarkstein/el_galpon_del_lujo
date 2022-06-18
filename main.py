@@ -54,13 +54,13 @@ def ver_catalogo():
     for cartera in carteras:
         return jsonify(cartera.serialize())
 
-@app.route("/api/el_galpon_de_lujo/carteras/<id>", methods=['GET'])     #ver una cartera por id
+#@app.route("/api/el_galpon_de_lujo/carteras/<id>", methods=['GET'])     #ver una cartera por id
 
 
-@app.route("/api/el_galpon_de_lujo/carteras/<marca>", methods=['GET'])      #ver carteras por marca
+#@app.route("/api/el_galpon_de_lujo/carteras/<marca>", methods=['GET'])      #ver carteras por marca
 
 
-@app.route("/api/el_galpon_de_lujo/carrito/<id>", methods=['PUT'])       #Agregar a carrito por id
+#@app.route("/api/el_galpon_de_lujo/carrito/<id>", methods=['PUT'])       #Agregar a carrito por id
 
 
 @app.route("/api/el_galpon_de_lujo/carrito/<id_cliente>/eliminar/<id>", methods=['DELETE'])      #Eliminar producto de carrito por id
@@ -76,8 +76,8 @@ def eliminar_de_carrito(id_cliente, id):
 
 
 
-@app.route("/api/el_galpon_de_lujo/carteras/actualizar_precios", methods=['PUT'])      #Actualizar precios, ver como se hace para solo admin
+#@app.route("/api/el_galpon_de_lujo/carteras/actualizar_precios", methods=['PUT'])      #Actualizar precios, ver como se hace para solo admin
 
 
 
-@app.route("/api/el_galpon_de_lujo/terminar_compra/<id>", methods=['GET'])         #terminar compra
+#@app.route("/api/el_galpon_de_lujo/terminar_compra/<id>", methods=['GET'])         #terminar compra
