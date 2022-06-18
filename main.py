@@ -23,7 +23,7 @@ def crear_cliente():
             generador_id_cliente(),
             cliente['Nombre'],
             cliente['Apellido'],
-            cliente['DNI'],
+            cliente['dni'],
             cliente['Telefono'],
             cliente['email'],
             cliente['Estado'],
@@ -66,7 +66,7 @@ def ver_catalogo():
 @app.route("/api/el_galpon_de_lujo/carrito/<id_cliente>/eliminar/<id>", methods=['DELETE'])      #Eliminar producto de carrito por id
 def eliminar_de_carrito(id_cliente, id):
     for cliente in clientes:
-        if cliente.id_cliente == id_cliente
+        if cliente.id_cliente == id_cliente:
             for producto in cliente.carrito:
                 if producto.id == id:
                     cliente.carrito.remove(producto)
@@ -81,8 +81,3 @@ def eliminar_de_carrito(id_cliente, id):
 
 
 @app.route("/api/el_galpon_de_lujo/terminar_compra/<id>", methods=['GET'])         #terminar compra
-
-
-
-
-
