@@ -47,7 +47,7 @@ def ver_carrito(id_cliente):
     for cliente in clientes:
         if cliente.id_cliente == id_cliente:
             for producto in cliente.producto:
-                    return jsonify(cliente.carrito.serialize())
+                    return jsonify(producto.serialize())
 
 @app.route("/api/el_galpon_de_lujo/carteras", methods = ['GET'])    #ver catalogo
 def ver_catalogo():
