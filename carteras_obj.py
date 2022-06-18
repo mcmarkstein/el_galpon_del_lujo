@@ -14,7 +14,7 @@ class Carteras:
             'fecha_ingreso': self.fecha_ingreso,
             'marca': self.marca,
             'color': self.color,
-            'tipo_de_cambio': self.tipo_de_cambio
+            'tipo_de_cambio': self.tipo_de_cambio,
             'precio': self.precio
         }
 
@@ -30,7 +30,7 @@ class Mochila(Carteras):
             'fecha_ingreso': self.fecha_ingreso,
             'marca': self.marca,
             'color': self.color,
-            'tipo_de_cambio': self.tipo_de_cambio
+            'tipo_de_cambio': self.tipo_de_cambio,
             'precio': self.precio
         }
 
@@ -46,7 +46,7 @@ class CrossBody(Carteras):
             'fecha_ingreso': self.fecha_ingreso,
             'marca': self.marca,
             'color': self.color,
-            'tipo_de_cambio': self.tipo_de_cambio
+            'tipo_de_cambio': self.tipo_de_cambio,
             'precio': self.precio
         }
 
@@ -62,7 +62,7 @@ class Clutch(Carteras):
             'fecha_ingreso': self.fecha_ingreso,
             'marca': self.marca,
             'color': self.color,
-            'tipo_de_cambio': self.tipo_de_cambio
+            'tipo_de_cambio': self.tipo_de_cambio,
             'precio': self.precio
         }
 
@@ -78,6 +78,6 @@ class Totebag(Carteras):
             'fecha_ingreso': self.fecha_ingreso,
             'marca': self.marca,
             'color': self.color,
-            'tipo_de_cambio': self.tipo_de_cambio
+            'tipo_de_cambio': self.tipo_de_cambio,
             'precio': self.precio
         }

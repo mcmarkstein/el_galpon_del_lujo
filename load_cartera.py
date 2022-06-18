@@ -19,7 +19,7 @@ def cargar_carteras():
                         cartera['precio']
                     )
                 )
-            elif cartera["modelo"] == "Totebag"
+            elif cartera["modelo"] == "Totebag":
                 carteras.append(
                     Totebag(
                         cartera['id'],
@@ -31,7 +31,7 @@ def cargar_carteras():
                         cartera['precio']
                     )
                 )
-            elif cartera["modelo"] == "Clutch"
+            elif cartera["modelo"] == "Clutch":
                 carteras.append(
                     Clutch(
                         cartera['id'],
@@ -43,7 +43,7 @@ def cargar_carteras():
                         cartera['precio']
                     )
                 )
-            elif cartera["modelo"] == "Cross Body"
+            elif cartera["modelo"] == "Cross Body":
                 carteras.append(
                     CrossBody(
                         cartera['id'],
