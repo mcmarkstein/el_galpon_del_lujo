@@ -21,21 +21,21 @@ def crear_cliente():
     try:
         nuevo_cliente = Cliente(
             generador_id_cliente(),
-            cliente['Nombre'],
-            cliente['Apellido'],
+            cliente['nombre'],
+            cliente['apellido'],
             cliente['dni'],
-            cliente['Telefono'],
+            cliente['telefono'],
             cliente['email'],
-            cliente['Estado'],
+            cliente['estado'],
             cliente['carrito']
         )
 
-        cliente.append(nuevo_cliente)
+        clientes.append(nuevo_cliente)
 
     except KeyError as key_err:
         missing_param = (key_err.__str__())
         return jsonify(
-            error_code=400,
+            error_code="400",
             error_description="Bad request",
             error_body=missing_param
         ), 400
@@ -46,8 +46,8 @@ def crear_cliente():
 def ver_carrito(id_cliente):
     for cliente in clientes:
         if cliente.id_cliente == id_cliente:
-            for producto in cliente.carrito:
-                    return jsonify(producto.serialize())
+            for producto in cliente.producto:
+                    return jsonify(cliente.carrito.serialize())
 
 @app.route("/api/el_galpon_de_lujo/carteras", methods = ['GET'])    #ver catalogo
 def ver_catalogo():
