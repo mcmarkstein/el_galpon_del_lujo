@@ -23,7 +23,7 @@ def crear_cliente():
             generador_id_cliente(),
             cliente['Nombre'],
             cliente['Apellido'],
-            cliente['DNI'],
+            cliente['dni'],
             cliente['Telefono'],
             cliente['email'],
             cliente['Estado'],

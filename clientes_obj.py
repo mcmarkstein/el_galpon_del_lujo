@@ -6,11 +6,11 @@ def generador_id_cliente():
 
 class Cliente:
 
-    def __init__(self, id_cliente, nombre, apellido, DNI, telefono, email, estado):
+    def __init__(self, id_cliente, nombre, apellido, dni, telefono, email, estado):
         self.id_cliente = id_cliente
         self.nombre = nombre
         self.apellido = apellido
-        self.DNI = DNI
+        self.dni = dni
         self.telefono = telefono
         self.email = email
         self.estado = estado
@@ -20,7 +20,7 @@ class Cliente:
             'id_cliente': self.id_cliente,
             'nombre': self.nombre,
             'apellido': self.apellido,
-            'DNI': self.DNI,
+            'dni': self.dni,
             'telefono': self.telefono,
             'email': self.email,
             'estado': self.estado

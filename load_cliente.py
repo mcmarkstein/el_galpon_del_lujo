@@ -12,7 +12,7 @@ def cargar_clientes():
                     cliente['id_cliente'],
                     cliente['nombre'],
                     cliente['apellido'],
-                    cliente['DNI'],
+                    cliente['dni'],
                     cliente['telefono'],
                     cliente['email'],
                     cliente['estado'],
