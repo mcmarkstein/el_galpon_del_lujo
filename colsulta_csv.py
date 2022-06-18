@@ -67,3 +67,32 @@ with open ("./consulta_2.csv", "w", newline="\n") as archivo:
             })
 archivo.close()
 del (archivo)
+
+
+
+conexion = sqlite3.connect('./clientesBBDD.db')
+
+cursor = conexion.cursor()
+
+sentenciaSQL = 'CREATE TABLE clientes'
+sentenciaSQL += '(id_cliente integer,'
+sentenciaSQL += 'nombre VARCHAR(30), '
+sentenciaSQL += 'apellido VARCHAR(30), '
+sentenciaSQL += 'dni integer, '
+sentenciaSQL += 'telefono integer, '
+sentenciaSQL += 'email VARCHAR(40), '
+sentenciaSQL += 'estado VARCHAR(30)) '
+
+sentenciaSQL = "INSERT INTO clientes"
+sentenciaSQL +=
+sentenciaSQL +=
+sentenciaSQL +=
+sentenciaSQL +=
+sentenciaSQL +=
+sentenciaSQL +=
+sentenciaSQL +=
+
+cursor.execute(sentenciaSQL)
+conexion.close()
+
+
