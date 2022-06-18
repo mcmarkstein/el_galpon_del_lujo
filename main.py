@@ -42,19 +42,23 @@ def crear_cliente():
 
     return jsonify(nuevo_cliente.serialize())
 
-@app.route("/api/el_galpon_de_lujo/carrito/<id_cliente>", methods = ['GET'])
+@app.route("/api/el_galpon_de_lujo/carrito/<id_cliente>", methods = ['GET'])        #ver carrito
 def ver_carrito(id_cliente):
     for cliente in clientes:
         if cliente.id_cliente == id_cliente:
-            for producto in cliente.producto:
-                    return jsonify(producto.serialize())
+                    return jsonify([producto.serialize() for producto in cliente.carrito])
+        else:
+            return jsonify({'Error': 'Cliente no encontrado'})
 
 @app.route("/api/el_galpon_de_lujo/carteras", methods = ['GET'])    #ver catalogo
 def ver_catalogo():
-    for cartera in carteras:
-        return jsonify(cartera.serialize())
+    return jsonify([cartera.serialize() for cartera in carteras])
 
-#@app.route("/api/el_galpon_de_lujo/carteras/<id>", methods=['GET'])     #ver una cartera por id
+@app.route("/api/el_galpon_de_lujo/carteras/<id>", methods=['GET'])     #ver una cartera por id
+def ver_cartera(id):
+    for cartera in carteras:
+        if cartera.id == id:
+            return jsonify(cartera.serialize())
 
 
 #@app.route("/api/el_galpon_de_lujo/carteras/<marca>", methods=['GET'])      #ver carteras por marca

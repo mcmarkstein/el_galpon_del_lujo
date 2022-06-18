@@ -1,5 +1,5 @@
 class Carteras:
-    def __init__(self, id, fecha_ingreso, marca, color, tipo_de_cambio, precio, modelo):
+    def __init__(self, id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio):
         self.id = id
         self.fecha_ingreso = fecha_ingreso
         self.modelo = modelo
@@ -22,7 +22,7 @@ class Carteras:
 
 
 class Mochila(Carteras):
-    def __init__(self, id, modelo, fecha_ingreso, marca, color, tipo_de_cambio, precio):
+    def __init__(self, id,  fecha_ingreso,modelo, marca, color, tipo_de_cambio, precio):
         super().__init__(id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio)
 
     def serialize(self):
@@ -38,7 +38,7 @@ class Mochila(Carteras):
 
 
 class CrossBody(Carteras):
-    def __init__(self, id, modelo, fecha_ingreso, marca, color, tipo_de_cambio, precio):
+    def __init__(self, id,  fecha_ingreso,modelo, marca, color, tipo_de_cambio, precio):
         super().__init__(id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio)
 
     def serialize(self):
@@ -54,7 +54,7 @@ class CrossBody(Carteras):
 
 
 class Clutch(Carteras):
-    def __init__(self, id, modelo, fecha_ingreso, marca, color, tipo_de_cambio, precio):
+    def __init__(self, id,  fecha_ingreso,modelo, marca, color, tipo_de_cambio, precio):
         super().__init__(id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio)
 
     def serialize(self):
@@ -70,7 +70,7 @@ class Clutch(Carteras):
 
 
 class Totebag(Carteras):
-    def __init__(self, id, modelo, fecha_ingreso, marca, color, tipo_de_cambio, precio):
+    def __init__(self, id,  fecha_ingreso,modelo, marca, color, tipo_de_cambio, precio):
         super().__init__(id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio)
 
     def serialize(self):
