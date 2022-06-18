@@ -1,5 +1,5 @@
 import json
-from carteras_obj import Carteras, Mochila, Totebag, Clutch, CrossBody      #Preguntar
+from carteras_obj import Carteras, Mochila, Totebag, Clutch, CrossBody
 
 def cargar_carteras():
     carteras = []

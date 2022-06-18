@@ -88,13 +88,14 @@
         "color": "rosa",
         "tipo_de_cambio": "USD",
         "precio": 5800
+},
     {
         "id": "0011",
         "fecha_ingreso": "1/10/2021",
         "modelo": "Cross Body",
         "marca": "Louis Vuitton",
         "color": "amarillo",
-        "tipo_de_cambiolo": "USD",
+        "tipo_de_cambio": "USD",
         "precio": 3600
     },
     {
@@ -121,7 +122,7 @@
         "modelo": "Cross Body",
         "marca": "Prada",
         "color": "plateado",
-        "tipo_de_cambioda": "EUR",
+        "tipo_de_cambio": "EUR",
         "precio": 1600
     },
     {

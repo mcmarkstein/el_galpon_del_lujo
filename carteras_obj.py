@@ -1,7 +1,8 @@
 class Carteras:
-    def __init__(self, id, fecha_ingreso, marca, color, tipo_de_cambio, precio):
+    def __init__(self, id, fecha_ingreso, marca, color, tipo_de_cambio, precio, modelo):
         self.id = id
         self.fecha_ingreso = fecha_ingreso
+        self.modelo = modelo
         self.marca = marca
         self.color = color
         self.tipo_de_cambio = tipo_de_cambio
@@ -12,6 +13,7 @@ class Carteras:
         return {
             'id': self.id,
             'fecha_ingreso': self.fecha_ingreso,
+            'modelo': self.modelo,
             'marca': self.marca,
             'color': self.color,
             'tipo_de_cambio': self.tipo_de_cambio,
@@ -20,14 +22,14 @@ class Carteras:
 
 
 class Mochila(Carteras):
-    def __init__(self, id, fecha_ingreso, marca, color, tipo_de_cambio, precio):
-        super().__init__(id, fecha_ingreso,  marca, color, tipo_de_cambio, precio)
-        self.modelo = "Mochila"
+    def __init__(self, id, modelo, fecha_ingreso, marca, color, tipo_de_cambio, precio):
+        super().__init__(id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio)
 
     def serialize(self):
         return {
             'id': self.id,
             'fecha_ingreso': self.fecha_ingreso,
+            'modelo': self.modelo,
             'marca': self.marca,
             'color': self.color,
             'tipo_de_cambio': self.tipo_de_cambio,
@@ -36,14 +38,14 @@ class Mochila(Carteras):
 
 
 class CrossBody(Carteras):
-    def __init__(self, id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio):
+    def __init__(self, id, modelo, fecha_ingreso, marca, color, tipo_de_cambio, precio):
         super().__init__(id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio)
-        self.modelo = "Cross body"
 
     def serialize(self):
         return {
             'id': self.id,
             'fecha_ingreso': self.fecha_ingreso,
+            'modelo': self.modelo,
             'marca': self.marca,
             'color': self.color,
             'tipo_de_cambio': self.tipo_de_cambio,
@@ -52,14 +54,14 @@ class CrossBody(Carteras):
 
 
 class Clutch(Carteras):
-    def __init__(self, id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio):
+    def __init__(self, id, modelo, fecha_ingreso, marca, color, tipo_de_cambio, precio):
         super().__init__(id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio)
-        self.modelo = "Clutch"
 
     def serialize(self):
         return {
             'id': self.id,
             'fecha_ingreso': self.fecha_ingreso,
+            'modelo': self.modelo,
             'marca': self.marca,
             'color': self.color,
             'tipo_de_cambio': self.tipo_de_cambio,
@@ -68,14 +70,14 @@ class Clutch(Carteras):
 
 
 class Totebag(Carteras):
-    def __init__(self, id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio):
+    def __init__(self, id, modelo, fecha_ingreso, marca, color, tipo_de_cambio, precio):
         super().__init__(id, fecha_ingreso, modelo, marca, color, tipo_de_cambio, precio)
-        self.modelo = "Totebag"
 
     def serialize(self):
         return {
             'id': self.id,
             'fecha_ingreso': self.fecha_ingreso,
+            'modelo': self.modelo,
             'marca': self.marca,
             'color': self.color,
             'tipo_de_cambio': self.tipo_de_cambio,
