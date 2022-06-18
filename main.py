@@ -1,8 +1,9 @@
 import json
+import requests
 from flask import Flask
 from flask import request
 from flask import jsonify
-from flask import make_response
+
 
 from clientes_obj import Cliente, generador_id_cliente
 from load_cliente import cargar_clientes
@@ -14,13 +15,19 @@ clientes: list = cargar_clientes()      #formas de aclarar que tipo de datos es
 carteras: list = cargar_carteras()      #vamos a hacer algo igual para carteras
 
 
-@app.route("/api/el_galpon_de_lujo/terminar_compra/<id_cliente>", methods=['GET'])
-def precio_ARS():
+@app.route("/api/el_galpon_de_lujo/precio_ARS/<id>", methods=['GET'])
+def precio_ARS(id):
     for cartera in carteras:
-        if cartera.tipo_de_cambio == 'EUR':
-            url_rsp = requests.get('https://api.apilayer.com/exchangerates_data/convert', params = {'to': 'ARS', 'from': 'EUR', 'amount': precio })
-        elif cartera.tipo_de_cambio == 'USD':
-            pass
+        if cartera.id == id:
+            url = "https://api.apilayer.com/exchangerates_data/convert?to=ARS&from={tipo_de_cambio}&amount={precio}".format(tipo_de_cambio = cartera.tipo_de_cambio, precio = cartera.precio)
+            payload = {}
+            headers = {
+                "apikey": "2fmmJ7Dlc4Wuh2XTDemrC75HYq9Zc9eQ"
+            }
+            response = requests.request("GET", url, headers=headers, data=payload)
+            rsps_json = response.json()
+
+            return {f'El precio original en {cartera.tipo_de_cambio} es': cartera.precio, 'El precio en ARS es' : rsps_json["result"] }
 
 
 @app.route("/api/el_galpon_de_lujo/generar_usuario/", methods = ['POST'])
