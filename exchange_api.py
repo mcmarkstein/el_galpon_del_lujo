@@ -10,5 +10,10 @@ headers= {
 response = requests.request("GET", url, headers=headers, data = payload)
 
 status_code = response.status_code
-result = response.text
+result = response.json
+
+print(result)
+
+
+
 

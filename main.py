@@ -14,6 +14,15 @@ clientes: list = cargar_clientes()      #formas de aclarar que tipo de datos es
 carteras: list = cargar_carteras()      #vamos a hacer algo igual para carteras
 
 
+@app.route("/api/el_galpon_de_lujo/terminar_compra/<id_cliente>", methods=['GET'])
+def precio_ARS():
+    for cartera in carteras:
+        if cartera.tipo_de_cambio == 'EUR':
+            url_rsp = requests.get('https://api.apilayer.com/exchangerates_data/convert', params = {'to': 'ARS', 'from': 'EUR', 'amount': precio })
+        elif cartera.tipo_de_cambio == 'USD':
+            pass
+
+
 @app.route("/api/el_galpon_de_lujo/generar_usuario/", methods = ['POST'])
 def crear_cliente():
     cliente = request.json
@@ -60,13 +69,14 @@ def ver_cartera_por_id(id):
         if cartera.id == id:
             return jsonify(cartera.serialize())
 
-"""
-@app.route("/api/el_galpon_de_lujo/carteras/<marca>", methods=['GET'])      #ver carteras por marca  ARREGLAR
-def ver_cartera_por_marca(marca):
+
+@app.route("/api/el_galpon_de_lujo/carteras/marca/<marca>", methods=['GET'])      #ver carteras por marca  ARREGLAR
+def ver_cartera_por_modelo(marca):
+    carteras_marca = []
     for cartera in carteras:
         if cartera.marca == marca:
-            return jsonify(cartera.serialize())
-"""
+            carteras_marca.append(cartera)
+    return jsonify([cartera.serialize() for cartera in carteras_marca])
 
 
 @app.route("/api/el_galpon_de_lujo/carrito/<id_cliente>/agregar/<id>", methods=['PUT'])       #Agregar a carrito por id
@@ -96,5 +106,6 @@ def temrinar_compra(id_cliente):
             for producto in cliente.carrito:
                 precios.append(producto.precio)
                 precio_total = sum(precios)
-            return jsonify({'Cliente': id_cliente, 'Estado': 'Se ha finalizado la compra', 'Productos elegidos' : cliente.carrito.serialize(), 'Total a pagar $' : precio_total })
+            return jsonify({'Cliente': id_cliente, 'Estado': 'Se ha finalizado la compra', 'Total a pagar $' : precio_total})
+
 
