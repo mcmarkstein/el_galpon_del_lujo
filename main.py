@@ -7,7 +7,6 @@ from flask import jsonify
 
 from clientes_obj import Cliente, generador_id_cliente
 from load_cliente import cargar_clientes
-from carteras_obj import Carteras, Totebag, CrossBody, Clutch, Mochila
 from load_cartera import cargar_carteras
 
 app = Flask(__name__)

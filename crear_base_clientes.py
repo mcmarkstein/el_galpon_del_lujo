@@ -52,21 +52,43 @@ clientes = [
     "carrito": []
     }
 ]
+clientes_tupl = []
+for cliente in clientes:
+    for clave, valor in cliente.items():
+        if clave!= 'carrito':
+            tupl_cliente = tuple(cliente.values())
+            clientes_tupl.append(tupl_cliente)
+print(clientes_tupl)
 
+'''
 conexion = sqlite3.connect('./clientesBBDD.db')
 
 cursor = conexion.cursor()
 
+cursor.execute('DROP TABLE clientes' )
+conexion.commit()
+conexion.close()
+
+
 sentenciaSQL = 'CREATE TABLE clientes'
 sentenciaSQL += '(id_cliente integer,'
+sentenciaSQL += 'nombre VARCHAR(30),'
+sentenciaSQL += 'apellido VARCHAR(30),'
+sentenciaSQL += 'dni integer,'
+sentenciaSQL += 'telefono integer,'
 sentenciaSQL += 'email VARCHAR(40), '
-sentenciaSQL += 'estado VARCHAR(30)) '
+sentenciaSQL += 'estado VARCHAR(30))'
 
+cursor.execute(sentenciaSQL)
 conexion.commit()
 
-
 sentenciaSQL = "INSERT INTO clientes VALUES (?,?,?,?,?,?,?)"
-cursor.executemany(sentenciaSQL, "./consulta_2.csv")
+cursor.executemany(sentenciaSQL, clientes_tupl)
 
 conexion.commit()
 conexion.close()
+'''
+
+
+
+
