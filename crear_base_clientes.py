@@ -82,16 +82,17 @@ sentenciaSQL += 'estado VARCHAR(30))'
 cursor.execute(sentenciaSQL)
 conexion.commit()
 
-sentenciaSQL = "INSERT INTO clientes VALUES (?,?,?,?,?,?,?)"
-cursor.executemany(sentenciaSQL, clientes_tupl)
+sentenciaSQL2 = "INSERT INTO clientes VALUES (?,?,?,?,?,?,?)"
+cursor.executemany(sentenciaSQL2, clientes_tupl)
 
 conexion.commit()
 conexion.close()
 '''
-sentenciaSQL = ('SELECT * FROM clientes')
-cursor.execute(sentenciaSQL)
+sentenciaSQL3 = ('SELECT email FROM clientes WHERE estado = "ACTIVO"')
+cursor.execute(sentenciaSQL3)
 conexion.commit()
 conexion.close()
+
 
 
 
