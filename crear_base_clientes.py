@@ -23,7 +23,7 @@ cursor.execute(sentenciaSQL)
 conexion.commit()
 '''
 '''
-#sentenciaSQL2 = "INSERT INTO clientes_2 VALUES ('12345', 'Mario', 'Arjona', '23700981', '01148723458', 'marjona@gmail.com', 'ACTIVO');"
+sentenciaSQL2 = "INSERT INTO clientes_2 VALUES ('12345', 'Mario', 'Arjona', '23700981', '01148723458', 'marjona@gmail.com', 'ACTIVO');"
 #sentenciaSQL2 = "INSERT INTO clientes_2 VALUES ('98765','Alejandra','Sanchez','38407221','01184926574','asanchez@gmail.com','ACTIVO');"
 #sentenciaSQL2 = "INSERT INTO clientes_2 VALUES ('12345', 'Manuel', 'Belgrano', '124589638', '01132679472', 'mbelgrano@gmail.com','INACTIVO');"
 #sentenciaSQL2 = "INSERT INTO clientes_2 VALUES ('00751', 'Julieta', 'Mandalorian', '37889675', '01154399633','mandalirian1@gmail.com','ACTIVO');"
@@ -32,8 +32,8 @@ cursor.execute(sentenciaSQL2)
 
 conexion.commit()
 
-
 '''
+
 sentenciaSQL3 = "SELECT email FROM clientes_2 WHERE estado = 'ACTIVO'"
 cursor.execute(sentenciaSQL3)
 mails_activos = cursor.fetchall()
