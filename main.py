@@ -63,11 +63,14 @@ def ver_cartera_por_id(id):
         if cartera.id == id:
             return jsonify(cartera.serialize())
 
-@app.route("/api/el_galpon_de_lujo/precio_ARS/<id>", methods=['GET'])
+
+@app.route("/api/el_galpon_de_lujo/precio_ARS/<id>", methods=['GET'])       #Ver el precio de una cartera en ARS
 def precio_ARS(id):
     for cartera in carteras:
         if cartera.id == id:
-            url = "https://api.apilayer.com/exchangerates_data/convert?to=ARS&from={tipo_de_cambio}&amount={precio}".format(tipo_de_cambio = cartera.tipo_de_cambio, precio = cartera.precio)
+            url = "https://api.apilayer.com/exchangerates_data/convert?to=ARS&from={tipo_de_cambio}&amount={precio}".format(
+                tipo_de_cambio = cartera.tipo_de_cambio, precio = cartera.precio
+            )
             payload = {}
             headers = {
                 "apikey": "2fmmJ7Dlc4Wuh2XTDemrC75HYq9Zc9eQ"
@@ -109,13 +112,25 @@ def ver_carrito(id_cliente):
 
 @app.route("/api/el_galpon_de_lujo/terminar_compra/<id_cliente>", methods=['GET'])         #terminar compra
 def temrinar_compra(id_cliente):
-    precios = []
-    precio_total = 0
+    precios_ARS = []
+    precio_total_ARS = 0
     for cliente in clientes:
         if cliente.id_cliente ==  id_cliente:
             for producto in cliente.carrito:
-                precios.append(producto.precio)
-                precio_total = sum(precios)
-            return jsonify({'Cliente': id_cliente, 'Estado': 'Se ha finalizado la compra', 'Total a pagar $' : precio_total})
+                url = "https://api.apilayer.com/exchangerates_data/convert?to=ARS&from={tipo_de_cambio}&amount={precio}".format(
+                    tipo_de_cambio=producto.tipo_de_cambio, precio=producto.precio
+                )
+                payload = {}
+                headers = {
+                    "apikey": "2fmmJ7Dlc4Wuh2XTDemrC75HYq9Zc9eQ"
+                }
+                response = requests.request("GET", url, headers=headers, data=payload)
+                rsps_json = response.json()
+                precios_ARS.append(rsps_json['result'])
+                precio_total_ARS = sum(precios_ARS)
+            return jsonify({'Cliente': id_cliente,
+                            'Estado': 'Se ha finalizado la compra',
+                            'Total a pagar en ARS $': precio_total_ARS,
+                            'Mensaje': 'Muchas gracias! Pronto le llegará un mail sobre como proceder con el pago'})
 
 
