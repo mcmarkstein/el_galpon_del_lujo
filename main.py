@@ -14,21 +14,6 @@ clientes: list = cargar_clientes()      #formas de aclarar que tipo de datos es
 carteras: list = cargar_carteras()      #vamos a hacer algo igual para carteras
 
 
-@app.route("/api/el_galpon_de_lujo/precio_ARS/<id>", methods=['GET'])
-def precio_ARS(id):
-    for cartera in carteras:
-        if cartera.id == id:
-            url = "https://api.apilayer.com/exchangerates_data/convert?to=ARS&from={tipo_de_cambio}&amount={precio}".format(tipo_de_cambio = cartera.tipo_de_cambio, precio = cartera.precio)
-            payload = {}
-            headers = {
-                "apikey": "2fmmJ7Dlc4Wuh2XTDemrC75HYq9Zc9eQ"
-            }
-            response = requests.request("GET", url, headers=headers, data=payload)
-            rsps_json = response.json()
-
-            return {f'El precio original en {cartera.tipo_de_cambio} es': cartera.precio, 'El precio en ARS es' : rsps_json["result"] }
-
-
 @app.route("/api/el_galpon_de_lujo/generar_usuario/", methods = ['POST'])
 def crear_cliente():
     cliente = request.json
@@ -69,12 +54,6 @@ def ver_carrito(id_cliente):
 def ver_catalogo():
     return jsonify([cartera.serialize() for cartera in carteras])
 
-@app.route("/api/el_galpon_de_lujo/carteras/<id>", methods=['GET'])     #ver una cartera por id
-def ver_cartera_por_id(id):
-    for cartera in carteras:
-        if cartera.id == id:
-            return jsonify(cartera.serialize())
-
 
 @app.route("/api/el_galpon_de_lujo/carteras/marca/<marca>", methods=['GET'])      #ver carteras por marca  ARREGLAR
 def ver_cartera_por_modelo(marca):
@@ -83,6 +62,28 @@ def ver_cartera_por_modelo(marca):
         if cartera.marca == marca:
             carteras_marca.append(cartera)
     return jsonify([cartera.serialize() for cartera in carteras_marca])
+
+
+@app.route("/api/el_galpon_de_lujo/carteras/<id>", methods=['GET'])     #ver una cartera por id
+def ver_cartera_por_id(id):
+    for cartera in carteras:
+        if cartera.id == id:
+            return jsonify(cartera.serialize())
+
+@app.route("/api/el_galpon_de_lujo/precio_ARS/<id>", methods=['GET'])
+def precio_ARS(id):
+    for cartera in carteras:
+        if cartera.id == id:
+            url = "https://api.apilayer.com/exchangerates_data/convert?to=ARS&from={tipo_de_cambio}&amount={precio}".format(tipo_de_cambio = cartera.tipo_de_cambio, precio = cartera.precio)
+            payload = {}
+            headers = {
+                "apikey": "2fmmJ7Dlc4Wuh2XTDemrC75HYq9Zc9eQ"
+            }
+            response = requests.request("GET", url, headers=headers, data=payload)
+            rsps_json = response.json()
+
+            return {f'El precio original en {cartera.tipo_de_cambio} es': cartera.precio, 'El precio en ARS es' : rsps_json["result"] }
+
 
 
 @app.route("/api/el_galpon_de_lujo/carrito/<id_cliente>/agregar/<id>", methods=['PUT'])       #Agregar a carrito por id
