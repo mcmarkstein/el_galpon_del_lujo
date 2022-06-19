@@ -54,11 +54,15 @@ clientes = [
 ]
 
 with open ("./consulta_2.csv", "w", newline="\n") as archivo:
-        campos = ['id_cliente', 'email', 'estado']
+        campos = ['id_cliente','nombre', 'apellido', 'dni', 'telefono', 'email', 'estado']
         writer = csv.DictWriter(archivo, fieldnames=campos)
         writer.writeheader()
         for client in clientes:
              writer.writerow({ "id_cliente": client["id_cliente"],
+                "nombre": client["nombre"],
+                "apellido": client["apellido"],
+                "dni": client["dni"],
+                "telefono": client["telefono"],
                 "email" : client["email"],
                 "estado" : client["estado"]
 
