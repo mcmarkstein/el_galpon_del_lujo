@@ -88,7 +88,7 @@ cursor.executemany(sentenciaSQL, clientes_tupl)
 conexion.commit()
 conexion.close()
 '''
-sentenciaSQL = ('SELECT email FROM clientes WHERE estado = "ACTIVO"')
+sentenciaSQL = ('SELECT * FROM clientes')
 cursor.execute(sentenciaSQL)
 conexion.commit()
 conexion.close()
