@@ -53,18 +53,18 @@ clientes = [
     }
 ]
 clientes_tupl = []
-for cliente in clientes:
-    for clave, valor in cliente.items():
-        if clave!= 'carrito':
-            tupl_cliente = tuple(cliente.values())
-            clientes_tupl.append(tupl_cliente)
-print(clientes_tupl)
 
-'''
+for cliente in clientes:
+    del(cliente['carrito'])
+    tupl_cliente = tuple(cliente.values())
+    clientes_tupl.append(tupl_cliente)
+
+
+
 conexion = sqlite3.connect('./clientesBBDD.db')
 
 cursor = conexion.cursor()
-
+'''
 cursor.execute('DROP TABLE clientes' )
 conexion.commit()
 conexion.close()
@@ -88,6 +88,11 @@ cursor.executemany(sentenciaSQL, clientes_tupl)
 conexion.commit()
 conexion.close()
 '''
+sentenciaSQL = ('SELECT email FROM clientes WHERE estado = "ACTIVO"')
+cursor.execute(sentenciaSQL)
+conexion.commit()
+conexion.close()
+
 
 
 
