@@ -30,22 +30,22 @@ sentenciaSQL += 'estado VARCHAR(30))'
 cursor.execute(sentenciaSQL)
 conexion.commit()
 '''
-'''
-sentenciaSQL2 = "INSERT INTO clientes_2 VALUES (?,?,?,?,?,?,?)
+
+sentenciaSQL2 = "INSERT INTO clientes_2 VALUES (?,?,?,?,?,?,?)"
 cursor.executemany(sentenciaSQL2, clientes)
 
 conexion.commit()
 
-'''
 
+'''
 sentenciaSQL3 = "SELECT email FROM clientes_2 WHERE estado = 'ACTIVO'"
 cursor.execute(sentenciaSQL3)
 mails_activos = cursor.fetchall()
 
 for mail in mails_activos:
     print(mail)
-conexion.close()
 
+conexion.close()
 
 
 
