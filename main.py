@@ -121,7 +121,7 @@ def ver_carrito(id_cliente):
 
 
 @app.route("/api/el_galpon_de_lujo/terminar_compra/<id_cliente>", methods=['GET'])         #terminar compra
-def temrinar_compra(id_cliente):
+def terminar_compra(id_cliente):
     precios_ARS = []
     precio_total_ARS = 0
     for cliente in clientes:
