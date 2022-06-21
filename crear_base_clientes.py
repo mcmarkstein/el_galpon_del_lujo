@@ -30,7 +30,7 @@ sentenciaSQL += 'estado VARCHAR(30))'
 cursor.execute(sentenciaSQL)
 conexion.commit()
 '''
-
+'''
 sentenciaSQL2 = "INSERT INTO clientes_2 VALUES (?,?,?,?,?,?,?)"
 cursor.executemany(sentenciaSQL2, clientes)
 
