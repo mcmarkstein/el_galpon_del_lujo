@@ -109,7 +109,7 @@ def ver_carrito(id_cliente):
     for cliente in clientes:
         if cliente.id_cliente == id_cliente:
             return jsonify([producto.serialize() for producto in cliente.carrito])
-    return jsonify({f'Error.Cliente {id_cliente}': 'No encontrado'})
+    return jsonify({f'Error. Cliente {id_cliente}': 'No encontrado'})
 
 
 @app.route("/api/el_galpon_de_lujo/terminar_compra/<id_cliente>", methods=['GET'])         #terminar compra
@@ -134,5 +134,6 @@ def terminar_compra(id_cliente):
                             'Estado': 'Se ha finalizado la compra',
                             'Total a pagar en ARS $': precio_total_ARS,
                             'Mensaje': 'Muchas gracias! Pronto le llegará un mail sobre como proceder con el pago'})
+    return jsonify({f'El cliente ingresado {id_cliente}': 'No existe'})
 
 
