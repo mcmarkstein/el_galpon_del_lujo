@@ -82,8 +82,6 @@ def precio_ARS(id):
 
             return {f'El precio original en {cartera.tipo_de_cambio} es': cartera.precio, 'El precio en ARS es' : rsps_json["result"] }
 
-        else:
-            return jsonify({f'El id {id}': 'Ha sido escrito incorrectamente o no existe'})
 
 
 
