@@ -63,8 +63,7 @@ def ver_cartera_por_id(id):
     for cartera in carteras:
         if cartera.id == id:
             return jsonify(cartera.serialize())
-        else:
-            return jsonify({f'El id {id}': 'Ha sido escrito incorrectamente o no existe'})
+
 
 
 @app.route("/api/el_galpon_de_lujo/precio_ARS/<id>", methods=['GET'])       #Ver el precio de una cartera en ARS
