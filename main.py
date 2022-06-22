@@ -84,8 +84,6 @@ def precio_ARS(id):
 
 
 
-
-
 @app.route("/api/el_galpon_de_lujo/carrito/<id_cliente>/agregar/<id>", methods=['PUT'])       #Agregar a carrito por id
 def agregar_a_carrito(id_cliente, id):
     for cartera in carteras:
@@ -141,7 +139,5 @@ def terminar_compra(id_cliente):
                             'Estado': 'Se ha finalizado la compra',
                             'Total a pagar en ARS $': precio_total_ARS,
                             'Mensaje': 'Muchas gracias! Pronto le llegará un mail sobre como proceder con el pago'})
-        else:
-            return jsonify({'Error': f'Cliente {id_cliente} no encontrado'})
 
 
