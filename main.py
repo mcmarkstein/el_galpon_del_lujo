@@ -50,10 +50,9 @@ def ver_catalogo():
 
 @app.route("/api/el_galpon_de_lujo/carteras/marca/<marca>", methods=['GET'])      #ver carteras por marca
 def ver_cartera_por_marca(marca):
-    carteras_marca = [f"La marca {marca} ha sido escrita incorrectamente o no existe"]
+    carteras_marca = []
     for cartera in carteras:
         if cartera.marca == marca:
-            carteras_marca.pop()
             carteras_marca.append(cartera)
     return jsonify([cartera.serialize() for cartera in carteras_marca])
 
