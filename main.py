@@ -80,7 +80,8 @@ def precio_ARS(id):
             response = requests.request("GET", url, headers=headers, data=payload)
             rsps_json = response.json()
 
-            return {f'El precio original en {cartera.tipo_de_cambio} es': cartera.precio, 'El precio en ARS es' : rsps_json["result"] }
+            return {f'El precio original en {cartera.tipo_de_cambio} es': cartera.precio,
+                    'El precio en ARS es' : rsps_json["result"]}
     return jsonify({f'El producto con el id {id}': 'No existe'})
 
 @app.route("/api/el_galpon_de_lujo/carrito/<id_cliente>/agregar/<id>", methods=['PUT'])       #Agregar a carrito por id
