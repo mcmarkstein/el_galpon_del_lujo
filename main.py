@@ -50,12 +50,13 @@ def ver_catalogo():
 
 @app.route("/api/el_galpon_de_lujo/carteras/marca/<marca>", methods=['GET'])      #ver carteras por marca
 def ver_cartera_por_marca(marca):
-    carteras_marca = []
+    carteras_marca = [f"La marca {marca} ha sido escrita incorrectamente o no existe"]
     for cartera in carteras:
         if cartera.marca == marca:
+            carteras_marca.pop()
             carteras_marca.append(cartera)
-            return jsonify([cartera.serialize() for cartera in carteras_marca])
-    return "No se encontro la marca ingresada."
+    return jsonify([cartera.serialize() for cartera in carteras_marca])
+
 
 
 @app.route("/api/el_galpon_de_lujo/carteras/<id>", methods=['GET'])     #ver una cartera por id
@@ -101,7 +102,8 @@ def eliminar_de_carrito(id_cliente, id):
                 if producto.id == id:
                     cliente.carrito.remove(producto)
                     return jsonify({'Busqueda': id, 'Estado': 'Se ha eliminado el producto'})
-            return jsonify({f'El producto con el id {id}': 'No esta en el carrito o no existe'})
+    return jsonify({'Opción 1: ': f'El producto con el id {id} No esta en el carrito o no existe',
+                    'Opción 2': f'El id del cliente {id_cliente} no existe o ha sido escrito incorrectamente'})
 
 
 @app.route("/api/el_galpon_de_lujo/carrito/<id_cliente>", methods = ['GET'])        #ver carrito
