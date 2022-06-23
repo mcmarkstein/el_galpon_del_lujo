@@ -30,7 +30,7 @@ def crear_cliente():
             cliente['carrito']
         )
 
-        clientes.append(nuevo_cliente)
+        clientes.insert(len(clientes),nuevo_cliente)
 
     except KeyError as key_err:
         missing_param = (key_err.__str__())
